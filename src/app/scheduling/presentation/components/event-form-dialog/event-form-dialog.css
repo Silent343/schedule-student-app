@@ -1,0 +1,14 @@
+.dialog { width: min(520px, 92vw); }
+.dialog-head { display: flex; align-items: center; justify-content: space-between; padding: 20px 22px 6px; }
+.dialog-head h2 { font-size: 1.3rem; }
+.x { border: 0; background: transparent; cursor: pointer; color: var(--ink-500); width: 34px; height: 34px; border-radius: 9px; display: grid; place-items: center; }
+.x:hover { background: var(--surface-sunken); color: var(--ink-900); }
+.dialog-body { display: flex; flex-direction: column; gap: 4px; padding: 10px 22px 20px; }
+.row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+mat-form-field { width: 100%; }
+.form-error { color: var(--danger-500); font-size: .85rem; margin: 2px 0 0; }
+.dialog-actions { display: flex; align-items: center; gap: 10px; margin-top: 8px; }
+.spacer { flex: 1; }
+.del { color: var(--danger-500); }
+.del .material-symbols-rounded { font-size: 18px; margin-right: 5px; vertical-align: -4px; }
+@media (max-width: 520px) { .row { grid-template-columns: 1fr; } }

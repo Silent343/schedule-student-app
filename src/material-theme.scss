@@ -1,0 +1,29 @@
+// Angular Material 3 theme for Aula.
+// A restrained, academic palette: indigo primary, blue tertiary. The brand
+// personality lives in the design tokens (styles.css), not in loud Material colors.
+@use '@angular/material' as mat;
+
+@include mat.core();
+
+html {
+  color-scheme: light;
+  @include mat.theme(
+    (
+      color: (
+        primary: mat.$violet-palette,
+        tertiary: mat.$blue-palette,
+      ),
+      typography: (
+        plain-family: 'Inter, "Helvetica Neue", sans-serif',
+        brand-family: 'Fraunces, Georgia, serif',
+      ),
+      density: 0,
+    )
+  );
+
+  // Material component overrides scoped to Aula's tokens.
+  --mat-sys-primary: #3d4db7;
+  --mat-dialog-container-shape: 18px;
+  --mdc-outlined-button-container-shape: 10px;
+  --mdc-filled-button-container-shape: 10px;
+}

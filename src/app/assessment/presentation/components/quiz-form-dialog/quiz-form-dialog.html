@@ -1,0 +1,78 @@
+<div class="dialog">
+  @if (loading()) { <mat-progress-bar mode="indeterminate"></mat-progress-bar> }
+  <header class="dialog-head">
+    <h2>{{ (isEdit ? 'assessment.form.editTitle' : 'assessment.form.newTitle') | translate }}</h2>
+    <button class="x" type="button" (click)="cancel()" aria-label="Cerrar">
+      <span class="material-symbols-rounded">close</span>
+    </button>
+  </header>
+
+  <form [formGroup]="form" (ngSubmit)="submit()" class="dialog-body">
+    <div class="row">
+      <mat-form-field appearance="outline" class="grow">
+        <mat-label>{{ 'assessment.form.title' | translate }}</mat-label>
+        <input matInput formControlName="title" maxlength="80" />
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>{{ 'common.subject' | translate }}</mat-label>
+        <mat-select formControlName="subject">
+          @for (s of subjects; track s.value) { <mat-option [value]="s.value">{{ s.labelKey | translate }}</mat-option> }
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div class="q-list" formArrayName="questions">
+      @for (q of questions.controls; track $index; let i = $index) {
+        <fieldset class="q-card" [formGroupName]="i">
+          <div class="q-card-head">
+            <span class="q-index">{{ 'assessment.form.question' | translate }} {{ i + 1 }}</span>
+            <button type="button" class="q-del" (click)="removeQuestion(i)"
+                    [disabled]="questions.length === 1" aria-label="Quitar pregunta">
+              <span class="material-symbols-rounded">delete</span>
+            </button>
+          </div>
+
+          <mat-form-field appearance="outline">
+            <mat-label>{{ 'assessment.form.prompt' | translate }}</mat-label>
+            <textarea matInput formControlName="prompt" rows="2"></textarea>
+          </mat-form-field>
+
+          <div class="q-options">
+            @for (key of optionKeys; track key) {
+              <mat-form-field appearance="outline">
+                <mat-label>{{ 'assessment.form.option' | translate }} {{ key | uppercase }}</mat-label>
+                <input matInput [formControlName]="key" />
+              </mat-form-field>
+            }
+          </div>
+
+          <div class="q-meta">
+            <mat-form-field appearance="outline" class="q-correct">
+              <mat-label>{{ 'assessment.form.correct' | translate }}</mat-label>
+              <mat-select formControlName="correctKey">
+                @for (key of optionKeys; track key) {
+                  <mat-option [value]="key">{{ key | uppercase }}</mat-option>
+                }
+              </mat-select>
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="grow">
+              <mat-label>{{ 'assessment.form.explanation' | translate }}</mat-label>
+              <input matInput formControlName="explanation" />
+            </mat-form-field>
+          </div>
+        </fieldset>
+      }
+    </div>
+
+    <button type="button" class="add-q" (click)="addQuestion()">
+      <span class="material-symbols-rounded">add</span>{{ 'assessment.form.addQuestion' | translate }}
+    </button>
+
+    @if (errorMsg()) { <p class="form-error">{{ errorMsg() }}</p> }
+
+    <div class="dialog-actions">
+      <button mat-stroked-button type="button" (click)="cancel()">{{ 'common.cancel' | translate }}</button>
+      <button mat-flat-button color="primary" type="submit" [disabled]="loading()">{{ 'common.save' | translate }}</button>
+    </div>
+  </form>
+</div>

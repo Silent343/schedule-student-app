@@ -1,0 +1,38 @@
+<section class="page about">
+  <header class="about-hero">
+    <p class="eyebrow">{{ 'about.eyebrow' | translate }}</p>
+    <h1 class="page-title">{{ 'about.title' | translate }}</h1>
+    <p class="about-lead">{{ 'about.lead' | translate }}</p>
+  </header>
+
+  <div class="card about-block">
+    <h2 class="about-h2">{{ 'about.contextsTitle' | translate }}</h2>
+    <div class="ctx-grid">
+      @for (c of contexts; track c.titleKey) {
+        <div class="ctx">
+          <span class="ctx-icon"><span class="material-symbols-rounded">{{ c.icon }}</span></span>
+          <div>
+            <h3 class="ctx-title">{{ c.titleKey | translate }}</h3>
+            <p class="ctx-desc">{{ c.descKey | translate }}</p>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+
+  <div class="card about-block">
+    <h2 class="about-h2">{{ 'about.layersTitle' | translate }}</h2>
+    <p class="about-text">{{ 'about.layersIntro' | translate }}</p>
+    <ol class="layers">
+      @for (l of layers; track l) {
+        <li class="layer"><span class="layer-dot"></span>{{ l | translate }}</li>
+      }
+    </ol>
+  </div>
+
+  <div class="card about-block">
+    <h2 class="about-h2">{{ 'about.dataTitle' | translate }}</h2>
+    <p class="about-text">{{ 'about.dataText' | translate }}</p>
+    <code class="about-code">GET · POST · PUT · DELETE — /api/v1</code>
+  </div>
+</section>

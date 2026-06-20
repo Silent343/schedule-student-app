@@ -1,0 +1,52 @@
+<section class="page">
+  <header class="page-head board-head">
+    <div>
+      <p class="eyebrow">{{ 'board.eyebrow' | translate }}</p>
+      <h1 class="page-title">{{ 'board.title' | translate }}</h1>
+      <p class="page-sub">{{ 'board.subtitle' | translate }}</p>
+    </div>
+    <button mat-flat-button color="primary" class="add-btn" (click)="openCreate()">
+      <span class="material-symbols-rounded">add</span>{{ 'board.add' | translate }}
+    </button>
+  </header>
+
+  <div class="board-toolbar">
+    <app-board-summary [total]="total()" [subjects]="subjectsCovered()" [days]="dayCount()" />
+
+    <div class="filters" role="tablist">
+      <button class="filter" [class.filter--on]="activeFilter() === 'all'"
+              (click)="setFilter('all')">{{ 'board.filter.all' | translate }}</button>
+      @for (s of subjects; track s.value) {
+        <button class="filter" [class.filter--on]="activeFilter() === s.value"
+                (click)="setFilter(s.value)">{{ s.labelKey | translate }}</button>
+      }
+    </div>
+  </div>
+
+  @if (error()) {
+    <div class="state state--error">
+      <span class="material-symbols-rounded">error</span>{{ error() }}
+    </div>
+  } @else if (loading()) {
+    <div class="state">{{ 'common.loading' | translate }}</div>
+  } @else if (visibleGroups().length === 0) {
+    <div class="state state--empty">
+      <span class="material-symbols-rounded">photo_library</span>
+      <h3>{{ 'board.empty.title' | translate }}</h3>
+      <p>{{ 'board.empty.message' | translate }}</p>
+      <button mat-flat-button color="primary" (click)="openCreate()">{{ 'board.add' | translate }}</button>
+    </div>
+  } @else {
+    @for (group of visibleGroups(); track group.day) {
+      <div class="day-group">
+        <h2 class="day-label"><span class="marker">{{ group.day }}</span></h2>
+        <div class="note-grid">
+          @for (note of group.notes; track note.id) {
+            <app-note-card [note]="note"
+              (edit)="openEdit($event)" (remove)="remove($event)" (preview)="preview($event)" />
+          }
+        </div>
+      </div>
+    }
+  }
+</section>

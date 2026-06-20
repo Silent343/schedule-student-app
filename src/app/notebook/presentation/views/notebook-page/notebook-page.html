@@ -1,0 +1,32 @@
+<section class="page">
+  <header class="page-head nb-head">
+    <div>
+      <p class="eyebrow">{{ 'notebook.eyebrow' | translate }}</p>
+      <h1 class="page-title">{{ 'notebook.title' | translate }}</h1>
+      <p class="page-sub">{{ 'notebook.subtitle' | translate }}</p>
+    </div>
+    <button mat-flat-button color="primary" class="add-btn" (click)="openCreate()">
+      <span class="material-symbols-rounded">add</span>{{ 'notebook.add' | translate }}
+    </button>
+  </header>
+
+  @if (error()) {
+    <div class="state state--error"><span class="material-symbols-rounded">error</span>{{ error() }}</div>
+  } @else if (loading()) {
+    <div class="state">{{ 'common.loading' | translate }}</div>
+  } @else if (notebooks().length === 0) {
+    <div class="state state--empty">
+      <span class="material-symbols-rounded">menu_book</span>
+      <h3>{{ 'notebook.empty.title' | translate }}</h3>
+      <p>{{ 'notebook.empty.message' | translate }}</p>
+      <button mat-flat-button color="primary" (click)="openCreate()">{{ 'notebook.add' | translate }}</button>
+    </div>
+  } @else {
+    <div class="nb-grid">
+      @for (notebook of notebooks(); track notebook.id) {
+        <app-notebook-card [notebook]="notebook"
+          (open)="read($event)" (edit)="openEdit($event)" (remove)="remove($event)" />
+      }
+    </div>
+  }
+</section>

@@ -1,0 +1,34 @@
+<div class="reader" [style.--cover]="notebook.coverColor">
+  <header class="reader-head">
+    <div>
+      <span class="subject-chip" [style.color]="style(notebook.subject).colorVar">
+        {{ style(notebook.subject).labelKey | translate }}
+      </span>
+      <h2 class="reader-title">{{ notebook.title }}</h2>
+    </div>
+    <button class="x" type="button" (click)="close()" aria-label="Cerrar">
+      <span class="material-symbols-rounded">close</span>
+    </button>
+  </header>
+
+  @if (!hasPages) {
+    <div class="reader-empty">{{ 'notebook.reader.empty' | translate }}</div>
+  } @else {
+    <article class="sheet">
+      <h3 class="sheet-heading">{{ page!.heading }}</h3>
+      <div class="sheet-body">{{ page!.content }}</div>
+    </article>
+
+    <footer class="reader-foot">
+      <button mat-stroked-button (click)="prev()" [disabled]="index() === 0">
+        <span class="material-symbols-rounded">chevron_left</span>{{ 'notebook.reader.prev' | translate }}
+      </button>
+      <span class="reader-count">
+        {{ 'notebook.reader.page' | translate: { current: index() + 1, total: notebook.pageCount } }}
+      </span>
+      <button mat-stroked-button (click)="next()" [disabled]="index() === notebook.pageCount - 1">
+        {{ 'notebook.reader.next' | translate }}<span class="material-symbols-rounded">chevron_right</span>
+      </button>
+    </footer>
+  }
+</div>

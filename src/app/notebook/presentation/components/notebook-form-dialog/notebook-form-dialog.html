@@ -1,0 +1,67 @@
+<div class="dialog">
+  @if (loading()) { <mat-progress-bar mode="indeterminate"></mat-progress-bar> }
+  <header class="dialog-head">
+    <h2>{{ (isEdit ? 'notebook.form.editTitle' : 'notebook.form.newTitle') | translate }}</h2>
+    <button class="x" type="button" (click)="cancel()" aria-label="Cerrar">
+      <span class="material-symbols-rounded">close</span>
+    </button>
+  </header>
+
+  <form [formGroup]="form" (ngSubmit)="submit()" class="dialog-body">
+    <div class="row">
+      <mat-form-field appearance="outline" class="grow">
+        <mat-label>{{ 'notebook.form.title' | translate }}</mat-label>
+        <input matInput formControlName="title" maxlength="80" />
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>{{ 'common.subject' | translate }}</mat-label>
+        <mat-select formControlName="subject">
+          @for (s of subjects; track s.value) { <mat-option [value]="s.value">{{ s.labelKey | translate }}</mat-option> }
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div class="cover-pick">
+      <span class="cover-label">{{ 'notebook.form.cover' | translate }}</span>
+      <div class="swatches">
+        @for (c of covers; track c) {
+          <button type="button" class="swatch" [class.swatch--on]="coverColor === c"
+                  [style.background]="c" (click)="pickCover(c)" [attr.aria-label]="c"></button>
+        }
+      </div>
+    </div>
+
+    <div class="p-list" formArrayName="pages">
+      @for (p of pages.controls; track $index; let i = $index) {
+        <fieldset class="p-card" [formGroupName]="i">
+          <div class="p-card-head">
+            <span class="p-index">{{ 'notebook.form.page' | translate }} {{ i + 1 }}</span>
+            <button type="button" class="p-del" (click)="removePage(i)"
+                    [disabled]="pages.length === 1" aria-label="Quitar página">
+              <span class="material-symbols-rounded">delete</span>
+            </button>
+          </div>
+          <mat-form-field appearance="outline">
+            <mat-label>{{ 'notebook.form.heading' | translate }}</mat-label>
+            <input matInput formControlName="heading" />
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>{{ 'notebook.form.content' | translate }}</mat-label>
+            <textarea matInput formControlName="content" rows="4"></textarea>
+          </mat-form-field>
+        </fieldset>
+      }
+    </div>
+
+    <button type="button" class="add-p" (click)="addPage()">
+      <span class="material-symbols-rounded">add</span>{{ 'notebook.form.addPage' | translate }}
+    </button>
+
+    @if (errorMsg()) { <p class="form-error">{{ errorMsg() }}</p> }
+
+    <div class="dialog-actions">
+      <button mat-stroked-button type="button" (click)="cancel()">{{ 'common.cancel' | translate }}</button>
+      <button mat-flat-button color="primary" type="submit" [disabled]="loading()">{{ 'common.save' | translate }}</button>
+    </div>
+  </form>
+</div>

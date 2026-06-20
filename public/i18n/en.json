@@ -1,0 +1,137 @@
+{
+  "brand": { "tagline": "Your study space" },
+  "layout": { "section": { "study": "Study", "more": "More" } },
+  "option": {
+    "board": "Board", "calendar": "Calendar", "assessment": "Quizzes",
+    "notebook": "Notebook", "about": "About"
+  },
+  "subject": {
+    "math": "Math", "physics": "Physics", "language": "Language",
+    "cs": "Computing", "other": "General"
+  },
+  "common": {
+    "edit": "Edit", "delete": "Delete", "cancel": "Cancel", "save": "Save",
+    "close": "Close", "loading": "Loading…", "required": "Required field",
+    "subject": "Subject", "options": "Options"
+  },
+  "footer": { "rights": "Built to study better" },
+  "home": {
+    "eyebrow": "Welcome",
+    "greeting": "Your classroom,",
+    "titleAccent": "organized",
+    "subtitle": "Bring your notes, your calendar, your practice quizzes and your notebooks together in one place.",
+    "open": "Open",
+    "card": {
+      "board": "Save study images and notes organized by subject.",
+      "calendar": "Keep track of exams, tasks and classes for the month.",
+      "assessment": "Practice with multiple-choice quizzes and review your results.",
+      "notebook": "Write and re-read your notebooks page by page."
+    }
+  },
+  "board": {
+    "eyebrow": "Board",
+    "title": "Study notes",
+    "subtitle": "Your visual notes, grouped by day.",
+    "add": "New note",
+    "preview": "View",
+    "filter": { "all": "All" },
+    "stats": { "notes": "Notes", "subjects": "Subjects", "days": "Days" },
+    "empty": { "title": "No notes yet", "message": "Add your first study note to get started." },
+    "delete": { "title": "Delete note", "message": "Delete \"{{title}}\"?" },
+    "form": {
+      "newTitle": "New note", "editTitle": "Edit note", "title": "Title",
+      "day": "Day", "dayPlaceholder": "e.g. Monday", "imageUrl": "Image URL",
+      "urlError": "Enter a valid URL", "previewHint": "Image preview"
+    }
+  },
+  "scheduling": {
+    "eyebrow": "Calendar",
+    "title": "Academic agenda",
+    "subtitle": "Your exams, tasks and classes at a glance.",
+    "add": "New event",
+    "today": "Today",
+    "addOnDay": "Add event",
+    "weekday": { "dom": "Sun", "lun": "Mon", "mar": "Tue", "mie": "Wed", "jue": "Thu", "vie": "Fri", "sab": "Sat" },
+    "month": {
+      "0": "January", "1": "February", "2": "March", "3": "April", "4": "May", "5": "June",
+      "6": "July", "7": "August", "8": "September", "9": "October", "10": "November", "11": "December"
+    },
+    "monthShort": {
+      "0": "Jan", "1": "Feb", "2": "Mar", "3": "Apr", "4": "May", "5": "Jun",
+      "6": "Jul", "7": "Aug", "8": "Sep", "9": "Oct", "10": "Nov", "11": "Dec"
+    },
+    "type": { "exam": "Exam", "task": "Task", "class": "Class", "reminder": "Reminder" },
+    "agenda": { "title": "Upcoming", "empty": "No upcoming events." },
+    "form": {
+      "newTitle": "New event", "editTitle": "Edit event", "title": "Title",
+      "type": "Type", "date": "Date", "notes": "Notes"
+    }
+  },
+  "assessment": {
+    "eyebrow": "Quizzes",
+    "title": "Practice",
+    "subtitle": "Test what you know with multiple-choice quizzes.",
+    "add": "New quiz",
+    "card": { "questions": "{{count}} questions", "start": "Start" },
+    "empty": { "title": "No quizzes yet", "message": "Create your first practice quiz." },
+    "delete": { "title": "Delete quiz", "message": "Delete \"{{title}}\"?" },
+    "runner": {
+      "progress": "Question {{current}} of {{total}}",
+      "prev": "Previous", "next": "Next", "finish": "Finish",
+      "score": "{{correct}} of {{total}} correct",
+      "correctAnswer": "Correct answer", "retry": "Retry"
+    },
+    "form": {
+      "newTitle": "New quiz", "editTitle": "Edit quiz", "title": "Title",
+      "question": "Question", "prompt": "Prompt", "option": "Option",
+      "correct": "Correct", "explanation": "Explanation (optional)", "addQuestion": "Add question"
+    }
+  },
+  "notebook": {
+    "eyebrow": "Notebook",
+    "title": "Your notebooks",
+    "subtitle": "Written notes, ready to re-read.",
+    "add": "New notebook",
+    "open": "Open notebook",
+    "read": "Read",
+    "card": { "pages": "{{count}} pages", "minutes": "{{count}} min" },
+    "empty": { "title": "No notebooks yet", "message": "Create your first notebook." },
+    "delete": { "title": "Delete notebook", "message": "Delete \"{{title}}\"?" },
+    "reader": {
+      "empty": "This notebook has no pages.",
+      "prev": "Previous", "next": "Next", "page": "Page {{current}} of {{total}}"
+    },
+    "form": {
+      "newTitle": "New notebook", "editTitle": "Edit notebook", "title": "Title",
+      "cover": "Cover", "page": "Page", "heading": "Heading",
+      "content": "Content", "addPage": "Add page"
+    }
+  },
+  "about": {
+    "eyebrow": "About",
+    "title": "About Aula",
+    "lead": "Aula is a rebuild of a school study app, now made with Angular following DDD, Clean Architecture and SOLID.",
+    "contextsTitle": "Bounded contexts",
+    "ctx": {
+      "board": "Visual study notes organized by subject and day.",
+      "calendar": "Academic events on a monthly grid.",
+      "assessment": "Quizzes with attempt evaluation.",
+      "notebook": "Notebooks with pages to read and edit."
+    },
+    "layersTitle": "Layers per context",
+    "layersIntro": "Each context is split into four layers with clear responsibilities:",
+    "layer": {
+      "domain": "Domain — entities, value objects and business rules.",
+      "application": "Application — signal stores orchestrating use cases.",
+      "infrastructure": "Infrastructure — HTTP clients, assemblers and facades.",
+      "presentation": "Presentation — components, views and dialogs."
+    },
+    "dataTitle": "Data",
+    "dataText": "The app consumes a REST API served by json-server from a db.json file, with full CRUD operations."
+  },
+  "page-not-found": {
+    "title": "Page not found",
+    "message": "The page you're looking for doesn't exist or was moved.",
+    "home": "Back to home"
+  }
+}
