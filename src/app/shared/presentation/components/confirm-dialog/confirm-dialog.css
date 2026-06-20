@@ -1,0 +1,12 @@
+.confirm { padding: 28px 26px 22px; text-align: center; max-width: 360px; }
+.confirm-icon {
+  width: 52px; height: 52px; margin: 0 auto 14px;
+  display: grid; place-items: center;
+  border-radius: 50%;
+  background: var(--danger-100); color: var(--danger-500);
+}
+.confirm-icon .material-symbols-rounded { font-size: 26px; }
+.confirm-title { font-size: 1.2rem; margin-bottom: 6px; }
+.confirm-message { color: var(--ink-500); font-size: 0.92rem; line-height: 1.5; margin: 0 0 22px; }
+.confirm-actions { display: flex; gap: 10px; justify-content: center; }
+.danger { background: var(--danger-500); color: #fff; }

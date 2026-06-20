@@ -1,0 +1,16 @@
+.reader { width: min(640px, 94vw); padding: 22px 24px 20px; }
+.reader-head { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 16px; }
+.reader-title { font-size: 1.4rem; margin-top: 8px; }
+.x { border: 0; background: transparent; cursor: pointer; color: var(--ink-500); width: 34px; height: 34px; border-radius: 9px; display: grid; place-items: center; }
+.x:hover { background: var(--surface-sunken); color: var(--ink-900); }
+.sheet {
+  background: var(--surface); border: 1px solid var(--ink-300); border-left: 4px solid var(--cover);
+  border-radius: var(--radius-sm); padding: 24px; min-height: 280px;
+  background-image: repeating-linear-gradient(transparent, transparent 31px, var(--surface-sunken) 31px, var(--surface-sunken) 32px);
+}
+.sheet-heading { font-size: 1.2rem; margin-bottom: 14px; line-height: 32px; }
+.sheet-body { font-size: .96rem; line-height: 32px; color: var(--ink-700); white-space: pre-wrap; }
+.reader-empty { padding: 50px; text-align: center; color: var(--ink-500); }
+.reader-foot { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-top: 18px; }
+.reader-foot .material-symbols-rounded { font-size: 18px; vertical-align: -4px; }
+.reader-count { font-family: var(--font-mono); font-size: .78rem; color: var(--ink-500); }

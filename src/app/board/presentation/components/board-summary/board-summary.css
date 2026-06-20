@@ -1,0 +1,5 @@
+.stats { display: inline-flex; align-items: center; gap: 18px; padding: 12px 20px; border-radius: var(--radius-md); background: var(--surface); border: 1px solid var(--ink-300); box-shadow: var(--shadow-1); }
+.stat { display: flex; flex-direction: column; }
+.stat-num { font-family: var(--font-mono); font-size: 1.4rem; font-weight: 600; color: var(--indigo-700); line-height: 1; }
+.stat-label { font-size: .72rem; color: var(--ink-500); margin-top: 5px; }
+.stat-div { width: 1px; height: 30px; background: var(--ink-300); }

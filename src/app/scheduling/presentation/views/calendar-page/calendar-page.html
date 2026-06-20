@@ -1,0 +1,38 @@
+<section class="page">
+  <header class="page-head cal-head">
+    <div>
+      <p class="eyebrow">{{ 'scheduling.eyebrow' | translate }}</p>
+      <h1 class="page-title">{{ 'scheduling.title' | translate }}</h1>
+      <p class="page-sub">{{ 'scheduling.subtitle' | translate }}</p>
+    </div>
+    <button mat-flat-button color="primary" class="add-btn" (click)="openCreate()">
+      <span class="material-symbols-rounded">add</span>{{ 'scheduling.add' | translate }}
+    </button>
+  </header>
+
+  <div class="month-bar">
+    <div class="month-nav">
+      <button class="nav-btn" (click)="prev()" aria-label="Mes anterior">
+        <span class="material-symbols-rounded">chevron_left</span>
+      </button>
+      <h2 class="month-name">
+        <span class="marker">{{ monthLabelKey() | translate }}</span>
+        <span class="month-year">{{ year() }}</span>
+      </h2>
+      <button class="nav-btn" (click)="next()" aria-label="Mes siguiente">
+        <span class="material-symbols-rounded">chevron_right</span>
+      </button>
+    </div>
+    <button mat-stroked-button (click)="today()">{{ 'scheduling.today' | translate }}</button>
+  </div>
+
+  @if (error()) {
+    <div class="state state--error"><span class="material-symbols-rounded">error</span>{{ error() }}</div>
+  } @else {
+    <div class="cal-layout">
+      <app-calendar-grid [cells]="grid()" [todayIso]="todayIso"
+        (addOnDay)="openCreate($event)" (openEvent)="openEdit($event)" />
+      <app-agenda-list [events]="upcoming()" (openEvent)="openEdit($event)" />
+    </div>
+  }
+</section>

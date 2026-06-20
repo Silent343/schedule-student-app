@@ -1,0 +1,83 @@
+<div class="runner" [style.--c]="style(quiz.subject).colorVar">
+  <header class="runner-head">
+    <div>
+      <span class="subject-chip" [style.color]="style(quiz.subject).colorVar">
+        {{ style(quiz.subject).labelKey | translate }}
+      </span>
+      <h2 class="runner-title">{{ quiz.title }}</h2>
+    </div>
+    <button class="x" type="button" (click)="close()" aria-label="Cerrar">
+      <span class="material-symbols-rounded">close</span>
+    </button>
+  </header>
+
+  @if (!result()) {
+    <!-- ── question flow ─────────────────────────────── -->
+    <div class="progress">
+      <div class="progress-bar" [style.width.%]="progressPercent()"></div>
+    </div>
+    <p class="progress-label">
+      {{ 'assessment.runner.progress' | translate: { current: index() + 1, total: quiz.questions.length } }}
+    </p>
+
+    <h3 class="prompt">{{ current.prompt }}</h3>
+
+    <div class="options">
+      @for (opt of current.options; track opt.key) {
+        <button class="option" type="button"
+                [class.option--on]="chosen === opt.key"
+                (click)="choose(opt.key)">
+          <span class="option-key">{{ opt.key | uppercase }}</span>
+          <span class="option-label">{{ opt.label }}</span>
+        </button>
+      }
+    </div>
+
+    <footer class="runner-foot">
+      <button mat-stroked-button (click)="prev()" [disabled]="index() === 0">
+        {{ 'assessment.runner.prev' | translate }}
+      </button>
+      <button mat-flat-button color="primary" (click)="next()" [disabled]="chosen === null">
+        {{ (isLast ? 'assessment.runner.finish' : 'assessment.runner.next') | translate }}
+      </button>
+    </footer>
+  } @else {
+    <!-- ── results ───────────────────────────────────── -->
+    <div class="result">
+      <div class="score" [attr.data-tone]="scoreTone()">
+        <span class="score-pct">{{ result()!.scorePercent }}%</span>
+        <span class="score-frac">
+          {{ 'assessment.runner.score' | translate: { correct: result()!.correct, total: result()!.total } }}
+        </span>
+      </div>
+
+      <ul class="review">
+        @for (r of result()!.results; track r.questionId; let i = $index) {
+          <li class="review-item" [class.review-item--ko]="!r.correct">
+            <span class="material-symbols-rounded">{{ r.correct ? 'check_circle' : 'cancel' }}</span>
+            <div class="review-body">
+              <p class="review-prompt">{{ quiz.questions[i].prompt }}</p>
+              @if (!r.correct) {
+                <p class="review-correct">
+                  {{ 'assessment.runner.correctAnswer' | translate }}:
+                  <strong>{{ r.correctKey | uppercase }}.</strong>
+                  {{ quiz.questions[i].labelFor(r.correctKey) }}
+                </p>
+              }
+              @if (quiz.questions[i].explanation) {
+                <p class="review-explain">{{ quiz.questions[i].explanation }}</p>
+              }
+            </div>
+          </li>
+        }
+      </ul>
+
+      <footer class="runner-foot">
+        <button mat-stroked-button (click)="retry()">
+          <span class="material-symbols-rounded">replay</span>{{ 'assessment.runner.retry' | translate }}
+        </button>
+        <button mat-flat-button color="primary" (click)="close()">{{ 'common.close' | translate }}</button>
+      </footer>
+    </div>
+  }
+</div>

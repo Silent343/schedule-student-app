@@ -1,0 +1,31 @@
+.runner { width: min(620px, 94vw); padding: 22px 24px 20px; }
+.runner-head { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 18px; }
+.runner-title { font-size: 1.35rem; margin-top: 8px; }
+.x { border: 0; background: transparent; cursor: pointer; color: var(--ink-500); width: 34px; height: 34px; border-radius: 9px; display: grid; place-items: center; }
+.x:hover { background: var(--surface-sunken); color: var(--ink-900); }
+.progress { height: 6px; background: var(--surface-sunken); border-radius: 999px; overflow: hidden; }
+.progress-bar { height: 100%; background: var(--c); border-radius: 999px; transition: width .25s ease; }
+.progress-label { font-family: var(--font-mono); font-size: .74rem; color: var(--ink-500); margin: 8px 0 18px; }
+.prompt { font-size: 1.1rem; line-height: 1.45; margin-bottom: 18px; }
+.options { display: flex; flex-direction: column; gap: 10px; }
+.option { display: flex; align-items: center; gap: 12px; text-align: left; border: 1.5px solid var(--ink-300); background: var(--surface); border-radius: var(--radius-sm); padding: 13px 14px; font: inherit; cursor: pointer; transition: all .14s ease; }
+.option:hover { border-color: var(--c); }
+.option--on { border-color: var(--c); background: color-mix(in srgb, var(--c) 8%, white); }
+.option-key { width: 28px; height: 28px; flex: none; display: grid; place-items: center; border-radius: 7px; background: var(--surface-sunken); font-family: var(--font-mono); font-weight: 600; font-size: .82rem; color: var(--ink-700); }
+.option--on .option-key { background: var(--c); color: #fff; }
+.option-label { font-size: .92rem; }
+.runner-foot { display: flex; justify-content: space-between; gap: 10px; margin-top: 22px; }
+.runner-foot .material-symbols-rounded { font-size: 18px; margin-right: 5px; vertical-align: -4px; }
+.score { text-align: center; padding: 22px; border-radius: var(--radius-md); margin-bottom: 20px; }
+.score[data-tone="great"] { background: var(--ok-100); }
+.score[data-tone="ok"] { background: var(--marker-100); }
+.score[data-tone="low"] { background: var(--danger-100); }
+.score-pct { display: block; font-family: var(--font-mono); font-size: 2.6rem; font-weight: 600; line-height: 1; color: var(--ink-900); }
+.score-frac { display: block; margin-top: 8px; color: var(--ink-700); font-size: .9rem; }
+.review { list-style: none; margin: 0 0 4px; padding: 0; display: flex; flex-direction: column; gap: 10px; max-height: 320px; overflow-y: auto; }
+.review-item { display: flex; gap: 10px; padding: 12px; border-radius: var(--radius-sm); background: var(--surface-sunken); }
+.review-item .material-symbols-rounded { color: var(--ok-500); flex: none; }
+.review-item--ko .material-symbols-rounded { color: var(--danger-500); }
+.review-prompt { font-size: .9rem; font-weight: 500; margin: 0; }
+.review-correct { font-size: .82rem; margin: 6px 0 0; color: var(--ink-700); }
+.review-explain { font-size: .82rem; margin: 4px 0 0; color: var(--ink-500); font-style: italic; }

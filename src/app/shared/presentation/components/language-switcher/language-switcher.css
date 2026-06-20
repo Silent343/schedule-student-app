@@ -1,0 +1,4 @@
+.lang { display: inline-flex; align-items: center; gap: 6px; border: 1px solid var(--ink-300); background: var(--surface); color: var(--ink-700); border-radius: 9px; padding: 7px 11px; cursor: pointer; font: inherit; }
+.lang:hover { border-color: var(--indigo-600); color: var(--indigo-700); }
+.lang .material-symbols-rounded { font-size: 18px; }
+.lang-code { font-family: var(--font-mono); font-size: .76rem; font-weight: 600; }

@@ -1,0 +1,21 @@
+.cal { overflow: hidden; }
+.cal-weekdays { display: grid; grid-template-columns: repeat(7, 1fr); background: var(--surface-sunken); border-bottom: 1px solid var(--ink-300); }
+.weekday { padding: 10px 8px; font-size: .7rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-500); text-align: center; }
+.cal-grid { display: grid; grid-template-columns: repeat(7, 1fr); }
+.cell { min-height: 104px; border-right: 1px solid var(--ink-300); border-bottom: 1px solid var(--ink-300); padding: 6px; display: flex; flex-direction: column; gap: 4px; }
+.cell:nth-child(7n) { border-right: 0; }
+.cell--out { background: #fafbfc; }
+.cell--out .cell-day { color: var(--ink-300); }
+.cell--today { background: var(--indigo-050); }
+.cell--today .cell-day { background: var(--indigo-600); color: #fff; border-radius: 7px; padding: 1px 7px; }
+.cell-head { display: flex; align-items: center; justify-content: space-between; }
+.cell-day { font-family: var(--font-mono); font-size: .8rem; font-weight: 600; color: var(--ink-700); }
+.cell-add { opacity: 0; border: 0; background: transparent; color: var(--ink-500); cursor: pointer; width: 22px; height: 22px; border-radius: 6px; display: grid; place-items: center; transition: opacity .12s ease; }
+.cell-add .material-symbols-rounded { font-size: 17px; }
+.cell:hover .cell-add { opacity: 1; }
+.cell-add:hover { background: var(--indigo-100); color: var(--indigo-700); }
+.cell-events { display: flex; flex-direction: column; gap: 3px; overflow: hidden; }
+.chip { display: flex; align-items: center; gap: 6px; border: 0; background: color-mix(in srgb, var(--c) 12%, white); color: var(--c); border-radius: 6px; padding: 3px 7px; font: inherit; font-size: .73rem; font-weight: 500; cursor: pointer; text-align: left; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.chip:hover { background: color-mix(in srgb, var(--c) 22%, white); }
+.chip-dot { width: 6px; height: 6px; border-radius: 50%; background: currentColor; flex: none; }
+@media (max-width: 640px) { .cell { min-height: 78px; } .chip { font-size: .66rem; } }

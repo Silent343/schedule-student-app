@@ -1,0 +1,137 @@
+{
+  "brand": { "tagline": "Tu espacio de estudio" },
+  "layout": { "section": { "study": "Estudio", "more": "Más" } },
+  "option": {
+    "board": "Tablero", "calendar": "Calendario", "assessment": "Exámenes",
+    "notebook": "Cuaderno", "about": "Acerca de"
+  },
+  "subject": {
+    "math": "Matemática", "physics": "Física", "language": "Lenguaje",
+    "cs": "Computación", "other": "General"
+  },
+  "common": {
+    "edit": "Editar", "delete": "Eliminar", "cancel": "Cancelar", "save": "Guardar",
+    "close": "Cerrar", "loading": "Cargando…", "required": "Campo obligatorio",
+    "subject": "Materia", "options": "Opciones"
+  },
+  "footer": { "rights": "Hecho para estudiar mejor" },
+  "home": {
+    "eyebrow": "Bienvenido",
+    "greeting": "Tu aula,",
+    "titleAccent": "ordenada",
+    "subtitle": "Reúne tus apuntes, tu calendario, tus exámenes de práctica y tus cuadernos en un solo lugar.",
+    "open": "Abrir",
+    "card": {
+      "board": "Guarda imágenes y notas de estudio organizadas por materia.",
+      "calendar": "Lleva el control de exámenes, tareas y clases del mes.",
+      "assessment": "Practica con cuestionarios de opción múltiple y revisa tus resultados.",
+      "notebook": "Escribe y relee tus cuadernos página por página."
+    }
+  },
+  "board": {
+    "eyebrow": "Tablero",
+    "title": "Notas de estudio",
+    "subtitle": "Tus apuntes visuales, agrupados por día.",
+    "add": "Nueva nota",
+    "preview": "Ver",
+    "filter": { "all": "Todas" },
+    "stats": { "notes": "Notas", "subjects": "Materias", "days": "Días" },
+    "empty": { "title": "Aún no hay notas", "message": "Agrega tu primera nota de estudio para empezar." },
+    "delete": { "title": "Eliminar nota", "message": "¿Seguro que quieres eliminar «{{title}}»?" },
+    "form": {
+      "newTitle": "Nueva nota", "editTitle": "Editar nota", "title": "Título",
+      "day": "Día", "dayPlaceholder": "Ej. Lunes", "imageUrl": "URL de imagen",
+      "urlError": "Ingresa una URL válida", "previewHint": "Vista previa de la imagen"
+    }
+  },
+  "scheduling": {
+    "eyebrow": "Calendario",
+    "title": "Agenda académica",
+    "subtitle": "Tus exámenes, tareas y clases en un vistazo.",
+    "add": "Nuevo evento",
+    "today": "Hoy",
+    "addOnDay": "Agregar evento",
+    "weekday": { "dom": "Dom", "lun": "Lun", "mar": "Mar", "mie": "Mié", "jue": "Jue", "vie": "Vie", "sab": "Sáb" },
+    "month": {
+      "0": "Enero", "1": "Febrero", "2": "Marzo", "3": "Abril", "4": "Mayo", "5": "Junio",
+      "6": "Julio", "7": "Agosto", "8": "Septiembre", "9": "Octubre", "10": "Noviembre", "11": "Diciembre"
+    },
+    "monthShort": {
+      "0": "Ene", "1": "Feb", "2": "Mar", "3": "Abr", "4": "May", "5": "Jun",
+      "6": "Jul", "7": "Ago", "8": "Sep", "9": "Oct", "10": "Nov", "11": "Dic"
+    },
+    "type": { "exam": "Examen", "task": "Tarea", "class": "Clase", "reminder": "Recordatorio" },
+    "agenda": { "title": "Próximos", "empty": "No hay eventos próximos." },
+    "form": {
+      "newTitle": "Nuevo evento", "editTitle": "Editar evento", "title": "Título",
+      "type": "Tipo", "date": "Fecha", "notes": "Notas"
+    }
+  },
+  "assessment": {
+    "eyebrow": "Exámenes",
+    "title": "Práctica",
+    "subtitle": "Pon a prueba lo que sabes con cuestionarios de opción múltiple.",
+    "add": "Nuevo examen",
+    "card": { "questions": "{{count}} preguntas", "start": "Empezar" },
+    "empty": { "title": "Aún no hay exámenes", "message": "Crea tu primer cuestionario de práctica." },
+    "delete": { "title": "Eliminar examen", "message": "¿Seguro que quieres eliminar «{{title}}»?" },
+    "runner": {
+      "progress": "Pregunta {{current}} de {{total}}",
+      "prev": "Anterior", "next": "Siguiente", "finish": "Terminar",
+      "score": "{{correct}} de {{total}} correctas",
+      "correctAnswer": "Respuesta correcta", "retry": "Reintentar"
+    },
+    "form": {
+      "newTitle": "Nuevo examen", "editTitle": "Editar examen", "title": "Título",
+      "question": "Pregunta", "prompt": "Enunciado", "option": "Opción",
+      "correct": "Correcta", "explanation": "Explicación (opcional)", "addQuestion": "Agregar pregunta"
+    }
+  },
+  "notebook": {
+    "eyebrow": "Cuaderno",
+    "title": "Tus cuadernos",
+    "subtitle": "Apuntes escritos, listos para releer.",
+    "add": "Nuevo cuaderno",
+    "open": "Abrir cuaderno",
+    "read": "Leer",
+    "card": { "pages": "{{count}} págs.", "minutes": "{{count}} min" },
+    "empty": { "title": "Aún no hay cuadernos", "message": "Crea tu primer cuaderno de apuntes." },
+    "delete": { "title": "Eliminar cuaderno", "message": "¿Seguro que quieres eliminar «{{title}}»?" },
+    "reader": {
+      "empty": "Este cuaderno no tiene páginas.",
+      "prev": "Anterior", "next": "Siguiente", "page": "Página {{current}} de {{total}}"
+    },
+    "form": {
+      "newTitle": "Nuevo cuaderno", "editTitle": "Editar cuaderno", "title": "Título",
+      "cover": "Portada", "page": "Página", "heading": "Encabezado",
+      "content": "Contenido", "addPage": "Agregar página"
+    }
+  },
+  "about": {
+    "eyebrow": "Acerca de",
+    "title": "Sobre Aula",
+    "lead": "Aula es una reconstrucción de una app de estudio escolar, ahora hecha con Angular siguiendo DDD, Clean Architecture y SOLID.",
+    "contextsTitle": "Contextos delimitados",
+    "ctx": {
+      "board": "Notas de estudio visuales organizadas por materia y día.",
+      "calendar": "Eventos académicos sobre una grilla mensual.",
+      "assessment": "Cuestionarios con evaluación de intentos.",
+      "notebook": "Cuadernos con páginas para leer y editar."
+    },
+    "layersTitle": "Capas por contexto",
+    "layersIntro": "Cada contexto se divide en cuatro capas con responsabilidades claras:",
+    "layer": {
+      "domain": "Dominio — entidades, objetos de valor y reglas de negocio.",
+      "application": "Aplicación — stores con signals que orquestan los casos de uso.",
+      "infrastructure": "Infraestructura — clientes HTTP, ensambladores y facades.",
+      "presentation": "Presentación — componentes, vistas y diálogos."
+    },
+    "dataTitle": "Datos",
+    "dataText": "La app consume una API REST servida por json-server desde un archivo db.json, con operaciones CRUD completas."
+  },
+  "page-not-found": {
+    "title": "Página no encontrada",
+    "message": "La página que buscas no existe o fue movida.",
+    "home": "Volver al inicio"
+  }
+}

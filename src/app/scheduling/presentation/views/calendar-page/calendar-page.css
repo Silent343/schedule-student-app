@@ -1,0 +1,12 @@
+.cal-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+.add-btn { height: 44px; }
+.add-btn .material-symbols-rounded { font-size: 20px; margin-right: 6px; vertical-align: -4px; }
+.month-bar { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 18px; flex-wrap: wrap; }
+.month-nav { display: flex; align-items: center; gap: 10px; }
+.nav-btn { border: 1px solid var(--ink-300); background: var(--surface); color: var(--ink-700); width: 38px; height: 38px; border-radius: 10px; cursor: pointer; display: grid; place-items: center; }
+.nav-btn:hover { border-color: var(--indigo-600); color: var(--indigo-700); }
+.month-name { font-size: 1.4rem; display: flex; align-items: baseline; gap: 8px; min-width: 200px; justify-content: center; text-transform: capitalize; }
+.month-year { font-family: var(--font-mono); font-size: 1rem; color: var(--ink-500); }
+.cal-layout { display: grid; grid-template-columns: 1fr 300px; gap: 20px; align-items: start; }
+.state--error { padding: 50px; text-align: center; color: var(--danger-500); display: flex; align-items: center; justify-content: center; gap: 8px; }
+@media (max-width: 980px) { .cal-layout { grid-template-columns: 1fr; } }

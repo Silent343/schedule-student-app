@@ -1,0 +1,402 @@
+{
+  "notes": [
+    {
+      "id": 1,
+      "title": "Regla de la cadena",
+      "subject": "math",
+      "dayLabel": "Lunes",
+      "imageUrl": "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&w=640&q=70",
+      "createdAt": "2026-06-08"
+    },
+    {
+      "id": 2,
+      "title": "Tabla de derivadas",
+      "subject": "math",
+      "dayLabel": "Lunes",
+      "imageUrl": "https://images.unsplash.com/photo-1596495578065-6e0763fa1178?auto=format&fit=crop&w=640&q=70",
+      "createdAt": "2026-06-08"
+    },
+    {
+      "id": 3,
+      "title": "Movimiento parabólico",
+      "subject": "physics",
+      "dayLabel": "Martes",
+      "imageUrl": "https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=640&q=70",
+      "createdAt": "2026-06-09"
+    },
+    {
+      "id": 4,
+      "title": "Suma de vectores",
+      "subject": "physics",
+      "dayLabel": "Martes",
+      "imageUrl": "https://images.unsplash.com/photo-1509228468518-180dd4864904?auto=format&fit=crop&w=640&q=70",
+      "createdAt": "2026-06-09"
+    },
+    {
+      "id": 5,
+      "title": "Conectores en inglés",
+      "subject": "language",
+      "dayLabel": "Miércoles",
+      "imageUrl": "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=640&q=70",
+      "createdAt": "2026-06-10"
+    },
+    {
+      "id": 6,
+      "title": "Estructuras de datos",
+      "subject": "cs",
+      "dayLabel": "Jueves",
+      "imageUrl": "https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?auto=format&fit=crop&w=640&q=70",
+      "createdAt": "2026-06-11"
+    }
+  ],
+  "events": [
+    {
+      "id": 1,
+      "title": "Examen de Cálculo",
+      "subject": "math",
+      "type": "exam",
+      "date": "2026-06-23",
+      "notes": "Capítulos 3 y 4: derivadas y aplicaciones."
+    },
+    {
+      "id": 2,
+      "title": "Entrega de laboratorio",
+      "subject": "physics",
+      "type": "task",
+      "date": "2026-06-25",
+      "notes": "Informe de movimiento parabólico."
+    },
+    {
+      "id": 3,
+      "title": "Clase de repaso",
+      "subject": "math",
+      "type": "class",
+      "date": "2026-06-22",
+      "notes": ""
+    },
+    {
+      "id": 4,
+      "title": "Quiz de Inglés",
+      "subject": "language",
+      "type": "exam",
+      "date": "2026-06-27",
+      "notes": "Unidad 5: conectores."
+    },
+    {
+      "id": 5,
+      "title": "Proyecto de Algoritmos",
+      "subject": "cs",
+      "type": "task",
+      "date": "2026-06-30",
+      "notes": "Implementar árbol binario de búsqueda."
+    },
+    {
+      "id": 6,
+      "title": "Recordatorio: matrícula",
+      "subject": "other",
+      "type": "reminder",
+      "date": "2026-07-01",
+      "notes": "Cierre del ciclo."
+    }
+  ],
+  "quizzes": [
+    {
+      "id": 1,
+      "title": "Derivadas",
+      "subject": "math",
+      "questions": [
+        {
+          "id": "der-1",
+          "prompt": "¿Cuál es la derivada de f(x) = x³?",
+          "options": [
+            {
+              "key": "a",
+              "label": "3x²"
+            },
+            {
+              "key": "b",
+              "label": "x²"
+            },
+            {
+              "key": "c",
+              "label": "3x"
+            },
+            {
+              "key": "d",
+              "label": "x³/3"
+            }
+          ],
+          "correctKey": "a",
+          "explanation": "Por la regla de la potencia: d/dx(xⁿ) = n·xⁿ⁻¹."
+        },
+        {
+          "id": "der-2",
+          "prompt": "¿Cuál es la derivada de f(x) = sen(x)?",
+          "options": [
+            {
+              "key": "a",
+              "label": "-sen(x)"
+            },
+            {
+              "key": "b",
+              "label": "cos(x)"
+            },
+            {
+              "key": "c",
+              "label": "-cos(x)"
+            },
+            {
+              "key": "d",
+              "label": "tan(x)"
+            }
+          ],
+          "correctKey": "b",
+          "explanation": "La derivada de sen(x) es cos(x)."
+        },
+        {
+          "id": "der-3",
+          "prompt": "¿Cuál es la derivada de una constante c?",
+          "options": [
+            {
+              "key": "a",
+              "label": "c"
+            },
+            {
+              "key": "b",
+              "label": "1"
+            },
+            {
+              "key": "c",
+              "label": "0"
+            },
+            {
+              "key": "d",
+              "label": "x"
+            }
+          ],
+          "correctKey": "c",
+          "explanation": "La derivada de cualquier constante es 0."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Logaritmos",
+      "subject": "math",
+      "questions": [
+        {
+          "id": "log-1",
+          "prompt": "¿Cuánto vale log₂(8)?",
+          "options": [
+            {
+              "key": "a",
+              "label": "2"
+            },
+            {
+              "key": "b",
+              "label": "3"
+            },
+            {
+              "key": "c",
+              "label": "4"
+            },
+            {
+              "key": "d",
+              "label": "8"
+            }
+          ],
+          "correctKey": "b",
+          "explanation": "2³ = 8, por lo tanto log₂(8) = 3."
+        },
+        {
+          "id": "log-2",
+          "prompt": "¿A qué equivale log(a·b)?",
+          "options": [
+            {
+              "key": "a",
+              "label": "log(a) · log(b)"
+            },
+            {
+              "key": "b",
+              "label": "log(a) − log(b)"
+            },
+            {
+              "key": "c",
+              "label": "log(a) + log(b)"
+            },
+            {
+              "key": "d",
+              "label": "log(a) / log(b)"
+            }
+          ],
+          "correctKey": "c",
+          "explanation": "Propiedad del producto: log(a·b) = log(a) + log(b)."
+        },
+        {
+          "id": "log-3",
+          "prompt": "¿Cuánto vale ln(1)?",
+          "options": [
+            {
+              "key": "a",
+              "label": "0"
+            },
+            {
+              "key": "b",
+              "label": "1"
+            },
+            {
+              "key": "c",
+              "label": "e"
+            },
+            {
+              "key": "d",
+              "label": "indefinido"
+            }
+          ],
+          "correctKey": "a",
+          "explanation": "ln(1) = 0 porque e⁰ = 1."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Vectores",
+      "subject": "physics",
+      "questions": [
+        {
+          "id": "vec-1",
+          "prompt": "¿Qué magnitud tiene un vector que es 'solo dirección y sentido sin tamaño'?",
+          "options": [
+            {
+              "key": "a",
+              "label": "Vector unitario"
+            },
+            {
+              "key": "b",
+              "label": "Vector nulo"
+            },
+            {
+              "key": "c",
+              "label": "Vector opuesto"
+            },
+            {
+              "key": "d",
+              "label": "Escalar"
+            }
+          ],
+          "correctKey": "a",
+          "explanation": "Un vector unitario tiene módulo 1 e indica dirección y sentido."
+        },
+        {
+          "id": "vec-2",
+          "prompt": "La suma de dos vectores se obtiene gráficamente con el método del…",
+          "options": [
+            {
+              "key": "a",
+              "label": "péndulo"
+            },
+            {
+              "key": "b",
+              "label": "paralelogramo"
+            },
+            {
+              "key": "c",
+              "label": "triángulo isósceles"
+            },
+            {
+              "key": "d",
+              "label": "círculo"
+            }
+          ],
+          "correctKey": "b",
+          "explanation": "El método del paralelogramo (o del polígono) permite sumar vectores gráficamente."
+        },
+        {
+          "id": "vec-3",
+          "prompt": "El módulo de un vector (3, 4) es:",
+          "options": [
+            {
+              "key": "a",
+              "label": "7"
+            },
+            {
+              "key": "b",
+              "label": "12"
+            },
+            {
+              "key": "c",
+              "label": "5"
+            },
+            {
+              "key": "d",
+              "label": "25"
+            }
+          ],
+          "correctKey": "c",
+          "explanation": "‖v‖ = √(3² + 4²) = √25 = 5."
+        }
+      ]
+    }
+  ],
+  "notebooks": [
+    {
+      "id": 1,
+      "title": "Cálculo I",
+      "subject": "math",
+      "coverColor": "#3d4db7",
+      "pages": [
+        {
+          "id": "nb1-p1",
+          "heading": "Límites",
+          "content": "Un límite describe el valor al que se acerca una función cuando la variable se aproxima a un punto. Notación: lim x→a f(x) = L.\n\nLímites laterales: por la izquierda (x→a⁻) y por la derecha (x→a⁺). El límite existe si ambos coinciden."
+        },
+        {
+          "id": "nb1-p2",
+          "heading": "Continuidad",
+          "content": "Una función es continua en a si: existe f(a), existe el límite en a, y ambos son iguales. Si falla alguna condición, hay una discontinuidad."
+        },
+        {
+          "id": "nb1-p3",
+          "heading": "Derivada",
+          "content": "La derivada mide la razón de cambio instantánea. Geométricamente es la pendiente de la recta tangente. Regla de la potencia, del producto, del cociente y de la cadena."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Física: Cinemática",
+      "subject": "physics",
+      "coverColor": "#2a9d8f",
+      "pages": [
+        {
+          "id": "nb2-p1",
+          "heading": "MRU",
+          "content": "Movimiento rectilíneo uniforme: velocidad constante, aceleración cero. x = x₀ + v·t."
+        },
+        {
+          "id": "nb2-p2",
+          "heading": "MRUV",
+          "content": "Movimiento rectilíneo uniformemente variado: aceleración constante. v = v₀ + a·t ; x = x₀ + v₀·t + ½·a·t²."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "English Grammar",
+      "subject": "language",
+      "coverColor": "#c2557a",
+      "pages": [
+        {
+          "id": "nb3-p1",
+          "heading": "Connectors",
+          "content": "Addition: moreover, furthermore, in addition. Contrast: however, nevertheless, on the other hand. Cause/effect: therefore, as a result, consequently."
+        },
+        {
+          "id": "nb3-p2",
+          "heading": "Conditionals",
+          "content": "Zero: general truths. First: real future. Second: unreal present. Third: unreal past."
+        }
+      ]
+    }
+  ]
+}

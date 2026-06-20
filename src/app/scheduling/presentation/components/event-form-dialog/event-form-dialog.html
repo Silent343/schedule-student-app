@@ -1,0 +1,54 @@
+<div class="dialog">
+  @if (loading()) { <mat-progress-bar mode="indeterminate"></mat-progress-bar> }
+  <header class="dialog-head">
+    <h2>{{ (isEdit ? 'scheduling.form.editTitle' : 'scheduling.form.newTitle') | translate }}</h2>
+    <button class="x" type="button" (click)="cancel()" aria-label="Cerrar">
+      <span class="material-symbols-rounded">close</span>
+    </button>
+  </header>
+
+  <form [formGroup]="form" (ngSubmit)="submit()" class="dialog-body">
+    <mat-form-field appearance="outline">
+      <mat-label>{{ 'scheduling.form.title' | translate }}</mat-label>
+      <input matInput formControlName="title" maxlength="80" />
+    </mat-form-field>
+
+    <div class="row">
+      <mat-form-field appearance="outline">
+        <mat-label>{{ 'common.subject' | translate }}</mat-label>
+        <mat-select formControlName="subject">
+          @for (s of subjects; track s.value) { <mat-option [value]="s.value">{{ s.labelKey | translate }}</mat-option> }
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>{{ 'scheduling.form.type' | translate }}</mat-label>
+        <mat-select formControlName="type">
+          @for (t of types; track t.value) { <mat-option [value]="t.value">{{ t.labelKey | translate }}</mat-option> }
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <mat-form-field appearance="outline">
+      <mat-label>{{ 'scheduling.form.date' | translate }}</mat-label>
+      <input matInput type="date" formControlName="date" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>{{ 'scheduling.form.notes' | translate }}</mat-label>
+      <textarea matInput formControlName="notes" rows="2"></textarea>
+    </mat-form-field>
+
+    @if (errorMsg()) { <p class="form-error">{{ errorMsg() }}</p> }
+
+    <div class="dialog-actions">
+      @if (isEdit) {
+        <button mat-button type="button" class="del" (click)="deleteEvent()">
+          <span class="material-symbols-rounded">delete</span>{{ 'common.delete' | translate }}
+        </button>
+      }
+      <span class="spacer"></span>
+      <button mat-stroked-button type="button" (click)="cancel()">{{ 'common.cancel' | translate }}</button>
+      <button mat-flat-button color="primary" type="submit" [disabled]="loading()">{{ 'common.save' | translate }}</button>
+    </div>
+  </form>
+</div>

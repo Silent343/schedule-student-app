@@ -1,0 +1,29 @@
+.shell { min-height: 100vh; background: var(--paper); }
+.sidebar { border-right: 1px solid var(--ink-300); background: var(--surface); transition: width .2s ease; overflow-x: hidden; }
+.brand { display: flex; align-items: center; gap: 12px; padding: 20px 18px; border-bottom: 1px solid var(--ink-300); }
+.brand-mark { width: 38px; height: 38px; flex: none; border-radius: 10px; background: var(--indigo-600); color: #fff; font-family: var(--font-display); font-weight: 600; font-size: 1.3rem; display: grid; place-items: center; }
+.brand-text { display: flex; flex-direction: column; white-space: nowrap; }
+.brand-name { font-family: var(--font-display); font-weight: 600; font-size: 1.15rem; }
+.brand-tag { font-size: .68rem; color: var(--ink-500); }
+.sidebar--collapsed .brand-text { display: none; }
+.nav { padding: 14px 12px; }
+.nav-section { font-size: .66rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-500); margin: 14px 10px 8px; white-space: nowrap; }
+.sidebar--collapsed .nav-section { opacity: 0; height: 8px; margin: 8px 0; }
+.nav-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 3px; }
+.nav-link { display: flex; align-items: center; gap: 13px; padding: 10px 12px; border-radius: var(--radius-sm); color: var(--ink-700); font-weight: 500; font-size: .92rem; transition: background .14s ease, color .14s ease; white-space: nowrap; }
+.nav-link:hover { background: var(--surface-sunken); color: var(--ink-900); }
+.nav-link--active { background: var(--indigo-050); color: var(--indigo-700); }
+.nav-link--active .nav-icon { color: var(--indigo-600); }
+.nav-icon { font-size: 21px; flex: none; }
+.sidebar--collapsed .nav-label { display: none; }
+.sidebar--collapsed .nav-link { justify-content: center; padding: 11px; }
+.body { display: flex; flex-direction: column; min-height: 100vh; }
+.topbar { position: sticky; top: 0; z-index: 5; height: var(--header-h); display: flex; align-items: center; justify-content: space-between; padding: 0 24px; background: rgba(245,246,248,.85); backdrop-filter: blur(8px); border-bottom: 1px solid var(--ink-300); }
+.topbar-left { display: flex; align-items: center; gap: 14px; }
+.menu-btn { border: 0; background: transparent; color: var(--ink-700); width: 38px; height: 38px; border-radius: 9px; cursor: pointer; display: grid; place-items: center; }
+.menu-btn:hover { background: var(--surface-sunken); }
+.topbar-title { font-size: 1.15rem; }
+.content { flex: 1; }
+@media (max-width: 1024px) {
+  .topbar { padding: 0 16px; }
+}

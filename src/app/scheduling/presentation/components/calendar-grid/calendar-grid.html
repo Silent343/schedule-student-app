@@ -1,0 +1,30 @@
+<div class="cal card">
+  <div class="cal-weekdays">
+    @for (d of weekdays; track d) {
+      <span class="weekday">{{ 'scheduling.weekday.' + d | translate }}</span>
+    }
+  </div>
+  <div class="cal-grid">
+    @for (cell of cells; track cell.isoDate) {
+      <div class="cell" [class.cell--out]="!cell.inMonth" [class.cell--today]="cell.isoDate === todayIso">
+        <div class="cell-head">
+          <span class="cell-day">{{ cell.day }}</span>
+          @if (cell.inMonth) {
+            <button class="cell-add" type="button" (click)="addOnDay.emit(cell.isoDate)"
+                    [attr.aria-label]="'scheduling.addOnDay' | translate">
+              <span class="material-symbols-rounded">add</span>
+            </button>
+          }
+        </div>
+        <div class="cell-events">
+          @for (ev of cell.events; track ev.id) {
+            <button class="chip" type="button" (click)="openEvent.emit(ev)"
+                    [style.--c]="style(ev.subject).colorVar" [title]="ev.title">
+              <span class="chip-dot"></span>{{ ev.title }}
+            </button>
+          }
+        </div>
+      </div>
+    }
+  </div>
+</div>

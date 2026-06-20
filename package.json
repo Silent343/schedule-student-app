@@ -1,0 +1,39 @@
+{
+  "name": "aula-study-webapp",
+  "version": "1.0.0",
+  "description": "Aula — student study companion. Angular SPA built with DDD, Clean Architecture and SOLID.",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "watch": "ng build --watch --configuration development",
+    "server": "json-server --watch server/db.json --routes server/routes.json --port 3000",
+    "dev": "concurrently \"npm run server\" \"npm run start\""
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/animations": "^21.2.0",
+    "@angular/cdk": "^21.2.8",
+    "@angular/common": "^21.2.0",
+    "@angular/compiler": "^21.2.0",
+    "@angular/core": "^21.2.0",
+    "@angular/forms": "^21.2.0",
+    "@angular/material": "^21.2.8",
+    "@angular/platform-browser": "^21.2.0",
+    "@angular/router": "^21.2.0",
+    "@ngx-translate/core": "^17.0.0",
+    "@ngx-translate/http-loader": "^17.0.0",
+    "rxjs": "~7.8.0",
+    "sweetalert2": "^11.26.24",
+    "tslib": "^2.3.0",
+    "zone.js": "~0.16.2"
+  },
+  "devDependencies": {
+    "@angular/build": "^21.2.8",
+    "@angular/cli": "^21.2.8",
+    "@angular/compiler-cli": "^21.2.0",
+    "concurrently": "^9.1.0",
+    "json-server": "^0.17.4",
+    "typescript": "~5.9.2"
+  }
+}
