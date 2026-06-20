@@ -1,0 +1,15 @@
+.about { max-width: 860px; }
+.about-hero { margin-bottom: 24px; max-width: 620px; }
+.about-lead { color: var(--ink-500); font-size: 1.05rem; line-height: 1.55; margin-top: 10px; }
+.about-block { padding: 24px; margin-bottom: 18px; }
+.about-h2 { font-size: 1.25rem; margin-bottom: 16px; }
+.about-text { color: var(--ink-700); line-height: 1.6; margin-bottom: 14px; }
+.ctx-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; }
+.ctx { display: flex; gap: 14px; }
+.ctx-icon { width: 42px; height: 42px; flex: none; border-radius: 11px; background: var(--indigo-050); color: var(--indigo-600); display: grid; place-items: center; }
+.ctx-title { font-size: 1rem; margin-bottom: 4px; }
+.ctx-desc { font-size: .86rem; color: var(--ink-500); line-height: 1.5; }
+.layers { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; counter-reset: layer; }
+.layer { display: flex; align-items: center; gap: 12px; font-weight: 500; color: var(--ink-700); }
+.layer-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--indigo-600); flex: none; }
+.about-code { display: inline-block; margin-top: 6px; font-family: var(--font-mono); font-size: .82rem; background: var(--ink-900); color: #e8eaf6; padding: 8px 14px; border-radius: 8px; }

@@ -1,0 +1,29 @@
+.note {
+  background: var(--surface);
+  border: 1px solid var(--ink-300);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-1);
+  transition: box-shadow .18s ease, transform .18s ease;
+}
+.note:hover { box-shadow: var(--shadow-2); transform: translateY(-2px); }
+.note-image {
+  display: block; width: 100%; aspect-ratio: 16 / 10;
+  border: 0; padding: 0; cursor: zoom-in; position: relative; background: var(--surface-sunken);
+}
+.note-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.note-zoom {
+  position: absolute; inset: 0; display: grid; place-items: center;
+  background: rgba(27,31,42,.32); color: #fff; opacity: 0; transition: opacity .18s ease;
+}
+.note-image:hover .note-zoom { opacity: 1; }
+.note-zoom .material-symbols-rounded { font-size: 30px; }
+.note-body { padding: 12px 14px 14px; }
+.note-top { display: flex; align-items: center; justify-content: space-between; }
+.note-menu {
+  border: 0; background: transparent; color: var(--ink-500);
+  width: 30px; height: 30px; border-radius: 8px; cursor: pointer; display: grid; place-items: center;
+}
+.note-menu:hover { background: var(--surface-sunken); color: var(--ink-900); }
+.note-title { font-size: 1rem; margin-top: 8px; }
+.menu-ico { font-size: 18px; margin-right: 10px; vertical-align: -3px; }

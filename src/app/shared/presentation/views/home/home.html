@@ -1,0 +1,20 @@
+<section class="page">
+  <header class="hero">
+    <p class="eyebrow">{{ 'home.eyebrow' | translate }}</p>
+    <h1 class="hero-title">{{ 'home.greeting' | translate }} <span class="marker">{{ 'home.titleAccent' | translate }}</span></h1>
+    <p class="hero-sub">{{ 'home.subtitle' | translate }}</p>
+  </header>
+
+  <div class="grid">
+    @for (s of sections; track s.path) {
+      <a class="tile" [routerLink]="s.path" [style.--c]="s.color">
+        <span class="tile-icon"><span class="material-symbols-rounded">{{ s.icon }}</span></span>
+        <h2 class="tile-title">{{ s.titleKey | translate }}</h2>
+        <p class="tile-desc">{{ s.descKey | translate }}</p>
+        <span class="tile-go">
+          {{ 'home.open' | translate }}<span class="material-symbols-rounded">arrow_forward</span>
+        </span>
+      </a>
+    }
+  </div>
+</section>

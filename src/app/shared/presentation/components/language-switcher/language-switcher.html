@@ -1,0 +1,8 @@
+<button class="lang" [matMenuTriggerFor]="menu" type="button" aria-label="Idioma">
+  <span class="material-symbols-rounded">translate</span>
+  <span class="lang-code">{{ current() | uppercase }}</span>
+</button>
+<mat-menu #menu="matMenu">
+  <button mat-menu-item (click)="use('es')">Español</button>
+  <button mat-menu-item (click)="use('en')">English</button>
+</mat-menu>

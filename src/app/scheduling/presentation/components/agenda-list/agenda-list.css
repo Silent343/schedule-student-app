@@ -1,0 +1,13 @@
+.agenda { padding: 18px; }
+.agenda-title { font-size: 1.05rem; margin-bottom: 14px; }
+.agenda-empty { color: var(--ink-500); font-size: .88rem; margin: 0; }
+.agenda-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+.agenda-item { display: flex; gap: 12px; padding: 9px; border-radius: var(--radius-sm); cursor: pointer; transition: background .14s ease; }
+.agenda-item:hover, .agenda-item:focus-visible { background: var(--surface-sunken); outline: none; }
+.agenda-date { width: 44px; flex: none; text-align: center; display: flex; flex-direction: column; }
+.agenda-day { font-family: var(--font-mono); font-size: 1.2rem; font-weight: 600; color: var(--ink-900); line-height: 1; }
+.agenda-month { font-size: .64rem; text-transform: uppercase; letter-spacing: .08em; color: var(--ink-500); margin-top: 3px; }
+.agenda-body { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.agenda-name { font-size: .9rem; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.agenda-meta { display: inline-flex; align-items: center; gap: 5px; font-size: .76rem; font-weight: 500; }
+.agenda-meta .material-symbols-rounded { font-size: 15px; }

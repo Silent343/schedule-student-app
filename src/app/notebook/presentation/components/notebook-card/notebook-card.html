@@ -1,0 +1,32 @@
+<article class="nb">
+  <button class="nb-book" type="button" (click)="open.emit(notebook)"
+          [style.--cover]="notebook.coverColor" [attr.aria-label]="'notebook.open' | translate">
+    <span class="nb-spine"></span>
+    <span class="nb-cover-title">{{ notebook.title }}</span>
+    <span class="nb-cover-sub">{{ style(notebook.subject).labelKey | translate }}</span>
+  </button>
+
+  <div class="nb-info">
+    <div class="nb-info-text">
+      <h3 class="nb-title">{{ notebook.title }}</h3>
+      <p class="nb-meta">
+        {{ 'notebook.card.pages' | translate: { count: notebook.pageCount } }} ·
+        {{ 'notebook.card.minutes' | translate: { count: notebook.readingMinutes } }}
+      </p>
+    </div>
+    <button class="nb-menu" [matMenuTriggerFor]="menu" type="button" aria-label="Opciones">
+      <span class="material-symbols-rounded">more_vert</span>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="open.emit(notebook)">
+        <span class="material-symbols-rounded menu-ico">menu_book</span>{{ 'notebook.read' | translate }}
+      </button>
+      <button mat-menu-item (click)="edit.emit(notebook)">
+        <span class="material-symbols-rounded menu-ico">edit</span>{{ 'common.edit' | translate }}
+      </button>
+      <button mat-menu-item (click)="remove.emit(notebook)">
+        <span class="material-symbols-rounded menu-ico">delete</span>{{ 'common.delete' | translate }}
+      </button>
+    </mat-menu>
+  </div>
+</article>

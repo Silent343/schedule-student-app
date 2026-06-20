@@ -1,0 +1,32 @@
+<section class="page">
+  <header class="page-head a-head">
+    <div>
+      <p class="eyebrow">{{ 'assessment.eyebrow' | translate }}</p>
+      <h1 class="page-title">{{ 'assessment.title' | translate }}</h1>
+      <p class="page-sub">{{ 'assessment.subtitle' | translate }}</p>
+    </div>
+    <button mat-flat-button color="primary" class="add-btn" (click)="openCreate()">
+      <span class="material-symbols-rounded">add</span>{{ 'assessment.add' | translate }}
+    </button>
+  </header>
+
+  @if (error()) {
+    <div class="state state--error"><span class="material-symbols-rounded">error</span>{{ error() }}</div>
+  } @else if (loading()) {
+    <div class="state">{{ 'common.loading' | translate }}</div>
+  } @else if (quizzes().length === 0) {
+    <div class="state state--empty">
+      <span class="material-symbols-rounded">quiz</span>
+      <h3>{{ 'assessment.empty.title' | translate }}</h3>
+      <p>{{ 'assessment.empty.message' | translate }}</p>
+      <button mat-flat-button color="primary" (click)="openCreate()">{{ 'assessment.add' | translate }}</button>
+    </div>
+  } @else {
+    <div class="quiz-grid">
+      @for (quiz of quizzes(); track quiz.id) {
+        <app-quiz-card [quiz]="quiz"
+          (start)="start($event)" (edit)="openEdit($event)" (remove)="remove($event)" />
+      }
+    </div>
+  }
+</section>

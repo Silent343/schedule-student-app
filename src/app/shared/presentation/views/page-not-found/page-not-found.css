@@ -1,0 +1,4 @@
+.nf { min-height: 60vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 12px; }
+.nf-code { font-family: var(--font-display); font-size: 4rem; font-weight: 600; line-height: 1; }
+.nf-title { font-size: 1.6rem; }
+.nf-sub { color: var(--ink-500); margin-bottom: 12px; }

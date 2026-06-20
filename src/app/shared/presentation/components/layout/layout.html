@@ -1,0 +1,61 @@
+<mat-sidenav-container class="shell" autosize>
+  <mat-sidenav #sidenav opened mode="side" class="sidebar"
+               [class.sidebar--collapsed]="isCollapsed()"
+               [style.width]="isCollapsed() ? 'var(--sidebar-w-collapsed)' : 'var(--sidebar-w)'">
+    <div class="brand">
+      <span class="brand-mark">A</span>
+      <span class="brand-text">
+        <span class="brand-name">Aula</span>
+        <span class="brand-tag">{{ 'brand.tagline' | translate }}</span>
+      </span>
+    </div>
+
+    <nav class="nav" aria-label="Principal">
+      <p class="nav-section">{{ 'layout.section.study' | translate }}</p>
+      <ul class="nav-list">
+        @for (opt of options; track opt.path) {
+          <li>
+            <a class="nav-link" [routerLink]="opt.path" routerLinkActive="nav-link--active"
+               (click)="closeOnMobile()" [attr.title]="isCollapsed() ? (opt.titleKey | translate) : null">
+              <span class="material-symbols-rounded nav-icon">{{ opt.icon }}</span>
+              <span class="nav-label">{{ opt.titleKey | translate }}</span>
+            </a>
+          </li>
+        }
+      </ul>
+
+      <p class="nav-section">{{ 'layout.section.more' | translate }}</p>
+      <ul class="nav-list">
+        @for (opt of secondary; track opt.path) {
+          <li>
+            <a class="nav-link" [routerLink]="opt.path" routerLinkActive="nav-link--active"
+               (click)="closeOnMobile()" [attr.title]="isCollapsed() ? (opt.titleKey | translate) : null">
+              <span class="material-symbols-rounded nav-icon">{{ opt.icon }}</span>
+              <span class="nav-label">{{ opt.titleKey | translate }}</span>
+            </a>
+          </li>
+        }
+      </ul>
+    </nav>
+  </mat-sidenav>
+
+  <mat-sidenav-content class="body">
+    <header class="topbar">
+      <div class="topbar-left">
+        <button class="menu-btn" (click)="toggleMenu()" aria-label="Menú">
+          <span class="material-symbols-rounded">{{ isCollapsed() ? 'menu' : 'menu_open' }}</span>
+        </button>
+        <h1 class="topbar-title">{{ headerTitle() | translate }}</h1>
+      </div>
+      <div class="topbar-right">
+        <app-language-switcher />
+      </div>
+    </header>
+
+    <main class="content">
+      <router-outlet />
+    </main>
+
+    <app-footer-content />
+  </mat-sidenav-content>
+</mat-sidenav-container>

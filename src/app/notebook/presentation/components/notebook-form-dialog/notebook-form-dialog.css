@@ -1,0 +1,27 @@
+.dialog { width: min(640px, 94vw); max-height: 88vh; display: flex; flex-direction: column; }
+.dialog-head { display: flex; align-items: center; justify-content: space-between; padding: 20px 22px 6px; }
+.dialog-head h2 { font-size: 1.3rem; }
+.x { border: 0; background: transparent; cursor: pointer; color: var(--ink-500); width: 34px; height: 34px; border-radius: 9px; display: grid; place-items: center; }
+.x:hover { background: var(--surface-sunken); color: var(--ink-900); }
+.dialog-body { display: flex; flex-direction: column; gap: 6px; padding: 10px 22px 20px; overflow-y: auto; }
+.row { display: flex; gap: 12px; }
+.grow { flex: 1; }
+mat-form-field { width: 100%; }
+.cover-pick { display: flex; align-items: center; gap: 14px; margin: 4px 0 10px; }
+.cover-label { font-size: .82rem; color: var(--ink-500); font-weight: 500; }
+.swatches { display: flex; gap: 8px; }
+.swatch { width: 28px; height: 28px; border-radius: 8px; border: 2px solid transparent; cursor: pointer; }
+.swatch--on { border-color: var(--ink-900); box-shadow: 0 0 0 2px var(--surface) inset; }
+.p-list { display: flex; flex-direction: column; gap: 12px; }
+.p-card { border: 1px solid var(--ink-300); border-radius: var(--radius-md); padding: 14px; margin: 0; background: var(--surface-sunken); }
+.p-card-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; }
+.p-index { font-family: var(--font-mono); font-size: .76rem; font-weight: 600; color: var(--indigo-700); text-transform: uppercase; letter-spacing: .06em; }
+.p-del { border: 0; background: transparent; color: var(--ink-500); cursor: pointer; width: 30px; height: 30px; border-radius: 8px; display: grid; place-items: center; }
+.p-del:hover:not(:disabled) { background: var(--danger-100); color: var(--danger-500); }
+.p-del:disabled { opacity: .35; cursor: not-allowed; }
+.add-p { display: inline-flex; align-items: center; gap: 6px; align-self: flex-start; border: 1.5px dashed var(--ink-300); background: transparent; color: var(--indigo-700); font: inherit; font-weight: 600; font-size: .86rem; padding: 9px 14px; border-radius: var(--radius-sm); cursor: pointer; margin-top: 4px; }
+.add-p:hover { border-color: var(--indigo-600); background: var(--indigo-050); }
+.add-p .material-symbols-rounded { font-size: 18px; }
+.form-error { color: var(--danger-500); font-size: .85rem; margin: 2px 0 0; }
+.dialog-actions { display: flex; justify-content: flex-end; gap: 10px; margin-top: 12px; }
+@media (max-width: 560px) { .row { flex-direction: column; } }

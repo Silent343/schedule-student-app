@@ -1,0 +1,25 @@
+<aside class="agenda card">
+  <h3 class="agenda-title">{{ 'scheduling.agenda.title' | translate }}</h3>
+  @if (events.length === 0) {
+    <p class="agenda-empty">{{ 'scheduling.agenda.empty' | translate }}</p>
+  } @else {
+    <ul class="agenda-list">
+      @for (ev of events; track ev.id) {
+        <li class="agenda-item" (click)="openEvent.emit(ev)" tabindex="0"
+            (keydown.enter)="openEvent.emit(ev)">
+          <div class="agenda-date">
+            <span class="agenda-day">{{ dayPart(ev.date) }}</span>
+            <span class="agenda-month">{{ monthKey(ev.date) | translate }}</span>
+          </div>
+          <div class="agenda-body">
+            <span class="agenda-name">{{ ev.title }}</span>
+            <span class="agenda-meta" [style.color]="style(ev.subject).colorVar">
+              <span class="material-symbols-rounded">{{ iconFor(ev.type) }}</span>
+              {{ style(ev.subject).labelKey | translate }}
+            </span>
+          </div>
+        </li>
+      }
+    </ul>
+  }
+</aside>

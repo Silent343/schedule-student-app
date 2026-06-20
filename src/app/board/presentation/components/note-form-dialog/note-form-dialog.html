@@ -1,0 +1,65 @@
+<div class="dialog">
+  @if (loading()) { <mat-progress-bar mode="indeterminate"></mat-progress-bar> }
+
+  <header class="dialog-head">
+    <h2>{{ (isEdit ? 'board.form.editTitle' : 'board.form.newTitle') | translate }}</h2>
+    <button class="x" type="button" (click)="cancel()" aria-label="Cerrar">
+      <span class="material-symbols-rounded">close</span>
+    </button>
+  </header>
+
+  <form [formGroup]="form" (ngSubmit)="submit()" class="dialog-body">
+    <div class="preview">
+      @if (previewUrl) {
+        <img [src]="previewUrl" alt="" (error)="$event.target && ($any($event.target).style.opacity = 0)" />
+      } @else {
+        <div class="preview-empty">
+          <span class="material-symbols-rounded">image</span>
+          <span>{{ 'board.form.previewHint' | translate }}</span>
+        </div>
+      }
+    </div>
+
+    <mat-form-field appearance="outline">
+      <mat-label>{{ 'board.form.title' | translate }}</mat-label>
+      <input matInput formControlName="title" maxlength="80" />
+      @if (form.controls.title.hasError('required') && form.controls.title.touched) {
+        <mat-error>{{ 'common.required' | translate }}</mat-error>
+      }
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>{{ 'common.subject' | translate }}</mat-label>
+      <mat-select formControlName="subject">
+        @for (s of subjects; track s.value) {
+          <mat-option [value]="s.value">{{ s.labelKey | translate }}</mat-option>
+        }
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>{{ 'board.form.day' | translate }}</mat-label>
+      <input matInput formControlName="dayLabel" [placeholder]="'board.form.dayPlaceholder' | translate" />
+      @if (form.controls.dayLabel.hasError('required') && form.controls.dayLabel.touched) {
+        <mat-error>{{ 'common.required' | translate }}</mat-error>
+      }
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>{{ 'board.form.imageUrl' | translate }}</mat-label>
+      <input matInput formControlName="imageUrl" placeholder="https://…" />
+      @if (form.controls.imageUrl.hasError('pattern') && form.controls.imageUrl.touched) {
+        <mat-error>{{ 'board.form.urlError' | translate }}</mat-error>
+      }
+    </mat-form-field>
+
+    @if (errorMsg()) { <p class="form-error">{{ errorMsg() }}</p> }
+
+    <div class="dialog-actions">
+      <button mat-stroked-button type="button" (click)="cancel()">{{ 'common.cancel' | translate }}</button>
+      <button mat-flat-button color="primary" type="submit" [disabled]="loading()">
+        {{ 'common.save' | translate }}
+      </button>
+    </div>
+  </form>
+</div>
